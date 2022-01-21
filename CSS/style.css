@@ -1,7 +1,8 @@
 .box13 {
-    padding-left: 8%;
-    margin: 5em 5em 5em 5em;
+    /* padding-left: 8%; */
+    margin: 0 auto ;
     color: #FFF;
+    text-align:  center;
     background: #6eb7ff;
     border-bottom: solid 6px #3f87ce;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
@@ -10,24 +11,32 @@
     /* display: inline-block; */
  }
 
- .box13-2 {
-    padding: 0.5em 1em;
-    margin: 2em 0;
+.interphone1{
+    margin:0 auto;
     color: #FFF;
+    text-align:  center;
     background: #6eb7ff;
     border-bottom: solid 6px #3f87ce;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
-    width: 500px;
-    display: inline-block;
+    width: 400px;    
+}
+
+
+
+
+ .headercss {
+    padding: 0.5em 1em;
+    text-align:  center;
+    background-color: rgb(241, 233, 186);
  }
 
  .box13-3 {
-    padding: 0.5em 1em;
+    /* padding: 0.5em 1em; */
     margin: 2em 0;
     color: #FFF;
     background: #6eb7ff;
-    border-bottom: solid 6px #3f87ce;
+    border-bottom: solid 6px #32506d;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     width: 500px;
@@ -52,4 +61,10 @@
     box-shadow: none;
     position: relative;
     top: 5px;
+}
+
+.hooter_css{
+    padding: 0.5em 1em;
+    text-align:  center;
+    background-color: rgb(241, 233, 186);
 }
