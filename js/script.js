@@ -13,11 +13,30 @@ window.addEventListener('DOMContentLoaded', function(){
     let btn_pause2 = document.getElementById("btn_pause2");
     let sound2 = document.getElementById("sound2");
 
-    //
+    //wait処理を実現するための関数
+    const sleep = ms => new Promise(res => setTimeout(res, ms));
 
+
+    //非同期処理で実現する必要あり
+    //引数にsound objectを渡す
+    async function wait_play(sound) {
+        //htmlの秒数を取得
+        let wait_time = document.getElementById("wait_time");
+        alert(wait_time.value + "秒後に再生します");
+        //msecのためかける1000が必要
+        wait_time = wait_time.value * 1000;
+        
+        //sleep関数を呼び出す。
+        await sleep(wait_time)
+
+        //実行したい処理を書く
+        sound.play();
+
+      }
 
     btn_play.addEventListener("click", e => {
-        sound1.play();
+        /* sound1.play(); */
+        wait_play(sound1)
     });
 
     btn_pause.addEventListener("click", e => {
