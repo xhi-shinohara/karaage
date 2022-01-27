@@ -37,7 +37,10 @@
     background-color: burlywood;
 }
 
-
+.box1 {
+    display: flex;
+    justify-content: center;
+}
 
 
 
