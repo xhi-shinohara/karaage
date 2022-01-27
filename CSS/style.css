@@ -31,6 +31,16 @@
     background-color: rgb(241, 233, 186);
  }
 
+.mainmanu {
+    display: flex;
+    justify-content: space-around;
+    background-color: burlywood;
+}
+
+
+
+
+
  .box13-3 {
     /* padding: 0.5em 1em; */
     margin: 2em 0;
