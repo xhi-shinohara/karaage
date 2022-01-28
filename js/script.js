@@ -2,9 +2,13 @@
 
 
 window.addEventListener('DOMContentLoaded', function(){
+
+    
     
     let btn_play = document.getElementById("btn_play");
     let btn_pause = document.getElementById("btn_pause");
+    let btn_pause_reset = document.getElementById("btn_pause_reset");
+
     let sound1 = document.getElementById("sound1");
 
     //const audioElement = document.querySelector("audio");
@@ -15,6 +19,7 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //wait処理を実現するための関数
     const sleep = ms => new Promise(res => setTimeout(res, ms));
+
 
 
     //非同期処理で実現する必要あり
@@ -43,6 +48,12 @@ window.addEventListener('DOMContentLoaded', function(){
         sound1.pause();
     });
 
+    btn_pause_reset.addEventListener("click", e => {
+        sound1.pause();
+        sound1.currentTime = 0;
+    })
+
+
     btn_play2.addEventListener("click", e => {
         let loop_chk2 = document.getElementById("loop_chk2");
         //alert(loop_chk2.checked);
@@ -59,8 +70,15 @@ window.addEventListener('DOMContentLoaded', function(){
     btn_pause2.addEventListener("click", e => {
         sound2.pause();
     });
+
+    //sendボタンのクリックイベント
+    send_btn.addEventListener("click", e => {
+        alert();
+    });
+
+    test_btn.addEventListener("click", e => {
+        alert();
+    });
+
+
 });
-
-function aa() {
-
-}
