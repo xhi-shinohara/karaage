@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="keijiban.css">
+    <script src="../js/keijiban_script.js"></script>
     <title>chat-app</title>
 </head>
 <body>
@@ -21,11 +22,15 @@
                     戻る
                 </a>
             </div>
-            <div class="messages"></div>
+            <div class="messages" id="all_msg"></div>
             <div class="form">
+                <label><input type="radio" name="hantei" value="good" checked>いいね！</label>
+                <label><input type="radio" name="hantei" value="bad">使えねぇ!</label>
+                <br><br>
+
                 <div class="new-message">
-                    <input class="input-text" placeholder="type a message" type="text">
-                    <input class="submit-btn" type="submit" value="send">
+                    <input class="input-text" placeholder="type a message" type="text" id="msg_box" value="">
+                    <button class="submit-btn" id="send_btn">send</button>
                 </div>
             </div>
         </div>
