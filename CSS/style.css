@@ -59,10 +59,9 @@
     margin: 0em;
 }
 
-
 .btn-press-down {
     display: inline-block;
-    background-color: rgb(25, 143, 41);
+    background-color: #0063dc;
     padding: 10px 15px;
     color: #fff;
     text-align: center;
