@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>会議抜けれるくん</title>
+    <link rel="stylesheet" href="kiyaku.css">
+    <script src="kiyaku.js"></script>
+</head>
+
+<body>
+    <div class="faq">
+        <h2>よくある質問</h2>
+        <h4>jQueryを使ってFAQ作ってみたのでクリックしてみてね</h4>
+        <dl>
+            <dt>
+                無料で使えますか？
+            </dt>
+            <dd>
+                いいえ、一回あたり500円(税抜)の利用料をいただいております。
+            </dd>
+
+            <dt>
+                詐欺ですか
+            </dt>
+            <dd>
+                いいえ、確認しなかったあなたが悪いです。
+            </dd>
+
+            <dt>
+                フェイク音源がバレました。責任とってください。
+            </dt>
+            <dd>
+                自己責任
+            </dd>
+
+            <dt>
+                焼きそば
+            </dt>
+            <dd>
+                おにぎり
+            </dd>
+
+            <dt>
+                jQueryって何？
+            </dt>
+            <dd>
+                ggrks
+            </dd>
+
+            <dt>
+                月が綺麗ですね
+            </dt>
+            <dd>
+                いいえ、まだ昼です。
+            </dd>
+
+        </dl>
+    </div>
+
+
+    <div class="p-wikipedia">
+        <div class="p-wikipedia__inner">
+           <h3 class="p-wikipedia__heading">WikipediaAPIを使って検索する</h3>
+               <div class="p-wikipedia__search">
+                   <input id="js-wikipedia-input" type="text" value="" placeholder="検索ワード">
+                   <button id="js-wikipedia-button" type="button">検索</button>
+               </div>
+          <div class="p-wikipedia__body" id="js-wikipedia-body"></div>
+        </div>
+    </div>
+    
+    <div class="footer-modoru">
+        <a href=../test.html>戻る</a>
+    </div>
+
+
+
+
+    <!-- jQuerry呼び出し -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $(".faq dt").on("click",function(){  //faqクラスのdtという要素をクリックすると
+                $(this).next().slideToggle(); //クリックした要素の次の要素がスライド表示、非表示されて
+                $(this).toggleClass("open"); //クリックした要素にopenクラスをつけたり外したりする
+            });
+        });
+    </script>
+    <!-- jQuerry呼び出しと処理ここまで -->
+
+</body>
+</html>
