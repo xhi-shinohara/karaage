@@ -11,26 +11,25 @@ window.addEventListener('DOMContentLoaded', function(){
     let btn_pause_reset1 = document.getElementById("btn_pause_reset1");
     let sound1 = document.getElementById("sound1");
 
+    //wait処理を実現するための関数
+    const sleep = ms => new Promise(res => setTimeout(res, ms));
+
     //const audioElement = document.querySelector("audio");
     
     //非同期処理で実現する必要あり
     //引数にsound objectを渡す
-    async function wait_play(sound1) {
+    async function wait_play1(sound1,wait_time) {
         //htmlの秒数を取得
-        let wait_time = document.getElementById("wait_time1");
+        //let wait_time = document.getElementById("wait_time1"); */
         alert(wait_time.value + "秒後に再生します");
         //msecのためかける1000が必要
         wait_time = wait_time.value * 1000;        
         //sleep関数を呼び出す。
-        await sleep(wait_time)
+        await sleep(wait_time);
         //実行したい処理を書く
         sound1.play();
       }
 
-    btn_play1.addEventListener("click", e => {
-        /* sound1.play(); */
-        wait_play(sound1)
-    });
 
     btn_pause1.addEventListener("click", e => {
         sound1.pause();
@@ -44,13 +43,13 @@ window.addEventListener('DOMContentLoaded', function(){
     btn_play1.addEventListener("click", e => {
         let loop_chk1 = document.getElementById("loop_chk1");
         //alert(loop_chk1.checked);
-        sound1.play();
-
         if (loop_chk1.checked == true) {
             sound1.loop = true
         } else {
             sound1.loop = false
         }
+        let wait_time = document.getElementById("wait_time1");
+        wait_play1(sound1,wait_time);
     });
 
     //子供の泣き声(男の子1)向け処理
@@ -205,7 +204,7 @@ window.addEventListener('DOMContentLoaded', function(){
         //msecのためかける1000が必要
         wait_time = wait_time.value * 1000;        
         //sleep関数を呼び出す。
-        await sleep(wait_time)
+        await sleep(wait_time);
         //実行したい処理を書く
         sound5.play();
       }
@@ -250,7 +249,7 @@ window.addEventListener('DOMContentLoaded', function(){
         //msecのためかける1000が必要
         wait_time = wait_time.value * 1000;        
         //sleep関数を呼び出す。
-        await sleep(wait_time)
+        await sleep(wait_time);
         //実行したい処理を書く
         sound6.play();
       }
@@ -340,7 +339,7 @@ window.addEventListener('DOMContentLoaded', function(){
         //msecのためかける1000が必要
         wait_time = wait_time.value * 1000;        
         //sleep関数を呼び出す。
-        await sleep(wait_time)
+        await sleep(wait_time);
         //実行したい処理を書く
         sound8.play();
       }
@@ -416,8 +415,7 @@ window.addEventListener('DOMContentLoaded', function(){
         }
     });
 
-//wait処理を実現するための関数
-const sleep = ms => new Promise(res => setTimeout(res, ms));
+
 
 
 /*     btn_pause2.addEventListener("click", e => {
