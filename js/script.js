@@ -7,10 +7,6 @@ window.addEventListener('DOMContentLoaded', function(){
     /***************************** 変数の宣言 *********************************************/
     /************************************************************************************/
 
-    let play_sound;
-    let pause_sound;
-    let loop_chk;
-    let wait_time;    
     let btn_play1 = document.getElementById("btn_play1");
     let btn_pause1 = document.getElementById("btn_pause1");
     let btn_pause_reset1 = document.getElementById("btn_pause_reset1");
@@ -38,6 +34,8 @@ window.addEventListener('DOMContentLoaded', function(){
     let btn_play9 = document.getElementById("btn_play9");
     let btn_pause9 = document.getElementById("btn_pause9");
     let btn_pause_reset9 = document.getElementById("btn_pause_reset9");
+    const RESET_FLAG_TRUE = 1;
+    const RESET_FLAG_FALSE = 0;
 
     /************************************************************************************/
     /***************************** 共通の関数 *********************************************/
@@ -59,14 +57,18 @@ window.addEventListener('DOMContentLoaded', function(){
     }
 
     //サウンド停止用の関数
-    function stop_sound (pause_sound) {
-        pause_sound.pause();
-        pause_sound.currentTime = 0;            
+    function stop_sound (pause_sound,reset_flag) {
+        pause_sound.pause();   
+
+        if (reset_flag == RESET_FLAG_TRUE){
+            pause_sound.currentTime = 0;    
+        }
     };
 
     //ループ処理関数
     function loop_check (play_sound,loop_chk) {
-        if (loop_chk.checked == true) {
+        //1oop_chk.checked == true と同義
+        if (loop_chk.checked) {
             play_sound.loop = true
         } 
         else {
@@ -80,26 +82,24 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play1.addEventListener("click", e => {
-        play_sound = document.getElementById("sound1");
-        loop_chk = document.getElementById("loop_chk1");
+        let loop_chk1 = document.getElementById("loop_chk1");
+        let wait_time1 = document.getElementById("wait_time1");
         //ループ処理関数を呼び出し
-        loop_check (play_sound, loop_chk);
+        loop_check (sound1, loop_chk1);
 
-        wait_time = document.getElementById("wait_time1");
-
-        wait_play(play_sound,wait_time);
+        //ウエイト処理を実行
+        wait_play(sound1, wait_time1);
     });
 
     //一時停止ボタンが押された際の処理
     btn_pause1.addEventListener("click", e => {
-        sound1.pause();
+        stop_sound (sound1, RESET_FLAG_FALSE);
     });
 
     //停止ボタンが押された際の処理
     btn_pause_reset1.addEventListener("click", e => {
-         pause_sound = document.getElementById("sound1");
         //停止処理の関数を呼び出し
-        stop_sound (pause_sound);
+        stop_sound (sound1, RESET_FLAG_TRUE);
     });
 
     /************************************************************************************/
@@ -108,54 +108,50 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play2.addEventListener("click", e => {
-        play_sound = document.getElementById("sound2");
-        loop_chk = document.getElementById("loop_chk2");
+        let loop_chk2 = document.getElementById("loop_chk2");
+        let wait_time2 = document.getElementById("wait_time2");
         //ループ処理関数を呼び出し
-        loop_check (play_sound, loop_chk);
+        loop_check (sound2, loop_chk2);
 
-        wait_time = document.getElementById("wait_time2");
-
-        wait_play(play_sound,wait_time);
+        //ウエイト処理を実行
+        wait_play(sound2, wait_time2);
     });
 
     //一時停止ボタンが押された際の処理
     btn_pause2.addEventListener("click", e => {
-        sound2.pause();
+        stop_sound (sound2, RESET_FLAG_FALSE);
     });
 
     //停止ボタンが押された際の処理
     btn_pause_reset2.addEventListener("click", e => {
-        pause_sound = document.getElementById("sound2");
         //停止処理の関数を呼び出し
-        stop_sound (pause_sound);
+        stop_sound (sound2, RESET_FLAG_TRUE);
     });
 
     /************************************************************************************/
     /***************************** 子供の泣き声(女の子)向け処理 ******************************/
     /************************************************************************************/
 
-    //再生ボタンが押された際の処理
-    btn_play3.addEventListener("click", e => {
-        play_sound = document.getElementById("sound3");
-        loop_chk = document.getElementById("loop_chk3");
+     //再生ボタンが押された際の処理
+     btn_play3.addEventListener("click", e => {
+        let loop_chk3 = document.getElementById("loop_chk3");
+        let wait_time3 = document.getElementById("wait_time3");
         //ループ処理関数を呼び出し
-        loop_check (play_sound, loop_chk);
+        loop_check (sound3, loop_chk3);
 
-        wait_time = document.getElementById("wait_time3");
-
-        wait_play(play_sound,wait_time);
+        //ウエイト処理を実行
+        wait_play(sound3, wait_time3);
     });
 
     //一時停止ボタンが押された際の処理
     btn_pause3.addEventListener("click", e => {
-        sound3.pause();
+        stop_sound (sound3, RESET_FLAG_FALSE);
     });
 
     //停止ボタンが押された際の処理
     btn_pause_reset3.addEventListener("click", e => {
-        pause_sound = document.getElementById("sound3");
         //停止処理の関数を呼び出し
-        stop_sound (pause_sound);
+        stop_sound (sound3, RESET_FLAG_TRUE);
     });
 
     /************************************************************************************/
@@ -164,26 +160,24 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play4.addEventListener("click", e => {
-        play_sound = document.getElementById("sound4");
-        loop_chk = document.getElementById("loop_chk4");
+        let loop_chk4 = document.getElementById("loop_chk4");
+        let wait_time4 = document.getElementById("wait_time4");
         //ループ処理関数を呼び出し
-        loop_check (play_sound, loop_chk);
+        loop_check (sound4, loop_chk4);
 
-        wait_time = document.getElementById("wait_time4");
-
-        wait_play(play_sound,wait_time);
+        //ウエイト処理を実行
+        wait_play(sound4, wait_time4);
     });
 
     //一時停止ボタンが押された際の処理
     btn_pause4.addEventListener("click", e => {
-        sound4.pause();
+        stop_sound (sound4, RESET_FLAG_FALSE);
     });
 
     //停止ボタンが押された際の処理
     btn_pause_reset4.addEventListener("click", e => {
-        pause_sound = document.getElementById("sound4");
         //停止処理の関数を呼び出し
-        stop_sound (pause_sound);
+        stop_sound (sound4, RESET_FLAG_TRUE);
     });
 
     /************************************************************************************/
@@ -192,26 +186,24 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play5.addEventListener("click", e => {
-        play_sound = document.getElementById("sound5");
-        loop_chk = document.getElementById("loop_chk5");
+        let loop_chk5 = document.getElementById("loop_chk5");
+        let wait_time5 = document.getElementById("wait_time5");
         //ループ処理関数を呼び出し
-        loop_check (play_sound, loop_chk);
+        loop_check (sound5, loop_chk5);
 
-        wait_time = document.getElementById("wait_time5");
-
-        wait_play(play_sound,wait_time);
+        //ウエイト処理を実行
+        wait_play(sound5, wait_time5);
     });
 
     //一時停止ボタンが押された際の処理
     btn_pause5.addEventListener("click", e => {
-        sound5.pause();
+        stop_sound (sound5, RESET_FLAG_FALSE);
     });
 
     //停止ボタンが押された際の処理
     btn_pause_reset5.addEventListener("click", e => {
-        pause_sound = document.getElementById("sound5");
         //停止処理の関数を呼び出し
-        stop_sound (pause_sound);
+        stop_sound (sound5, RESET_FLAG_TRUE);
     });
     
     /************************************************************************************/
@@ -220,26 +212,24 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play6.addEventListener("click", e => {
-        play_sound = document.getElementById("sound6");
-        loop_chk = document.getElementById("loop_chk6");
+        let loop_chk6 = document.getElementById("loop_chk6");
+        let wait_time6 = document.getElementById("wait_time6");
         //ループ処理関数を呼び出し
-        loop_check (play_sound, loop_chk);
+        loop_check (sound6, loop_chk6);
 
-        wait_time = document.getElementById("wait_time6");
-
-        wait_play(play_sound,wait_time);
+        //ウエイト処理を実行
+        wait_play(sound6, wait_time6);
     });
 
     //一時停止ボタンが押された際の処理
     btn_pause6.addEventListener("click", e => {
-        sound6.pause();
+        stop_sound (sound6, RESET_FLAG_FALSE);
     });
 
     //停止ボタンが押された際の処理
     btn_pause_reset6.addEventListener("click", e => {
-        pause_sound = document.getElementById("sound6");
         //停止処理の関数を呼び出し
-        stop_sound (pause_sound);
+        stop_sound (sound6, RESET_FLAG_TRUE);
     });
     
     /************************************************************************************/
@@ -248,26 +238,24 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play7.addEventListener("click", e => {
-        play_sound = document.getElementById("sound7");
-        loop_chk = document.getElementById("loop_chk7");
+        let loop_chk7 = document.getElementById("loop_chk7");
+        let wait_time7 = document.getElementById("wait_time7");
         //ループ処理関数を呼び出し
-        loop_check (play_sound, loop_chk);
+        loop_check (sound7, loop_chk7);
 
-        wait_time = document.getElementById("wait_time7");
-
-        wait_play(play_sound,wait_time);
+        //ウエイト処理を実行
+        wait_play(sound7, wait_time7);
     });
 
     //一時停止ボタンが押された際の処理
     btn_pause7.addEventListener("click", e => {
-        sound7.pause();
+        stop_sound (sound7, RESET_FLAG_FALSE);
     });
 
     //停止ボタンが押された際の処理
     btn_pause_reset7.addEventListener("click", e => {
-        pause_sound = document.getElementById("sound7");
         //停止処理の関数を呼び出し
-        stop_sound (pause_sound);
+        stop_sound (sound7, RESET_FLAG_TRUE);
     });
 
     /************************************************************************************/
@@ -276,26 +264,24 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play8.addEventListener("click", e => {
-        play_sound = document.getElementById("sound8");
-        loop_chk = document.getElementById("loop_chk8");
+        let loop_chk8 = document.getElementById("loop_chk8");
+        let wait_time8 = document.getElementById("wait_time8");
         //ループ処理関数を呼び出し
-        loop_check (play_sound, loop_chk);
+        loop_check (sound8, loop_chk8);
 
-        wait_time = document.getElementById("wait_time8");
-
-        wait_play(play_sound,wait_time);
+        //ウエイト処理を実行
+        wait_play(sound8, wait_time8);
     });
 
     //一時停止ボタンが押された際の処理
     btn_pause8.addEventListener("click", e => {
-        sound8.pause();
+        stop_sound (sound8, RESET_FLAG_FALSE);
     });
 
     //停止ボタンが押された際の処理
     btn_pause_reset8.addEventListener("click", e => {
-        pause_sound = document.getElementById("sound8");
         //停止処理の関数を呼び出し
-        stop_sound (pause_sound);
+        stop_sound (sound8, RESET_FLAG_TRUE);
     });
 
     /************************************************************************************/
@@ -304,26 +290,25 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play9.addEventListener("click", e => {
-        play_sound = document.getElementById("sound9");
-        loop_chk = document.getElementById("loop_chk9");
+        let loop_chk9 = document.getElementById("loop_chk9");
+        let wait_time9 = document.getElementById("wait_time9");
         //ループ処理関数を呼び出し
-        loop_check (play_sound, loop_chk);
+        loop_check (sound9, loop_chk9);
 
-        wait_time = document.getElementById("wait_time9");
-
-        wait_play(play_sound,wait_time);
+        //ウエイト処理を実行
+        wait_play(sound9, wait_time9);
     });
 
     //一時停止ボタンが押された際の処理
     btn_pause9.addEventListener("click", e => {
-        sound9.pause();
+        stop_sound (sound9, RESET_FLAG_FALSE);
     });
 
     //停止ボタンが押された際の処理
     btn_pause_reset9.addEventListener("click", e => {
-        pause_sound = document.getElementById("sound9");
         //停止処理の関数を呼び出し
-        stop_sound (pause_sound);
+        stop_sound (sound9, RESET_FLAG_TRUE);
     });
+
     /************************************************************************************/
 });
