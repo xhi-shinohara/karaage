@@ -1,15 +1,3 @@
-.box13 {
-    /* padding-left: 8%; */
-    margin: 0 auto ;
-    color: #FFF;
-    text-align:  center;
-    background: #6eb7ff;
-    border-bottom: solid 6px #3f87ce;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-    border-radius: 9px;
-    width: 400px;
-    /* display: inline-block; */
- }
 
 .interphone1{
     margin:0 auto;
@@ -21,9 +9,6 @@
     border-radius: 9px;
     width: 400px;    
 }
-
-
-
 
  .headercss {
     padding: 0.5em 1em;
