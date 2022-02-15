@@ -34,6 +34,10 @@ window.addEventListener('DOMContentLoaded', function(){
     let btn_play9 = document.getElementById("btn_play9");
     let btn_pause9 = document.getElementById("btn_pause9");
     let btn_pause_reset9 = document.getElementById("btn_pause_reset9");
+    let btn_play10 = document.getElementById("btn_play10");
+    let btn_pause10 = document.getElementById("btn_pause10");
+    let btn_pause_reset10 = document.getElementById("btn_pause_reset10");
+    
     const RESET_FLAG_TRUE = 1;
     const RESET_FLAG_FALSE = 0;
 
@@ -155,7 +159,7 @@ window.addEventListener('DOMContentLoaded', function(){
     });
 
     /************************************************************************************/
-    /***************************** 固定電話の呼び出し音向け処理 ******************************/
+    /***************************** 固定電話の呼び出し音1向け処理 ******************************/
     /************************************************************************************/
 
     //再生ボタンが押された際の処理
@@ -179,6 +183,32 @@ window.addEventListener('DOMContentLoaded', function(){
         //停止処理の関数を呼び出し
         stop_sound (sound4, RESET_FLAG_TRUE);
     });
+
+    /************************************************************************************/
+    /***************************** 固定電話の呼び出し音2向け処理 ***********************************/
+    /************************************************************************************/
+
+        //再生ボタンが押された際の処理
+        btn_play10.addEventListener("click", e => {
+            let loop_chk10 = document.getElementById("loop_chk10");
+            let wait_time10 = document.getElementById("wait_time10");
+            //ループ処理関数を呼び出し
+            loop_check (sound10, loop_chk10);
+    
+            //ウエイト処理を実行
+            wait_play(sound10, wait_time10);
+        });
+    
+        //一時停止ボタンが押された際の処理
+        btn_pause4.addEventListener("click", e => {
+            stop_sound (sound10, RESET_FLAG_FALSE);
+        });
+    
+        //停止ボタンが押された際の処理
+        btn_pause_reset10.addEventListener("click", e => {
+            //停止処理の関数を呼び出し
+            stop_sound (sound10, RESET_FLAG_TRUE);
+        });
 
     /************************************************************************************/
     /***************************** インターホン１向け処理 ***********************************/
