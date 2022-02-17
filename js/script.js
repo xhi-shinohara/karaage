@@ -6,11 +6,11 @@ window.addEventListener('DOMContentLoaded', function(){
     /************************************************************************************/
     /***************************** 変数の宣言 *********************************************/
     /************************************************************************************/
-
-    let btn_play1 = document.getElementById("btn_play1");
-    let btn_pause1 = document.getElementById("btn_pause1");
-    let btn_pause_reset1 = document.getElementById("btn_pause_reset1");
-    let btn_play2 = document.getElementById("btn_play2");
+    //let w = window;
+    //let btn_play1 = document.getElementById("btn_play1");
+    //let btn_pause1 = document.getElementById("btn_pause1");
+    //let btn_pause_reset1 = document.getElementById("btn_pause_reset1");
+    /* let btn_play2 = document.getElementById("btn_play2");
     let btn_pause2 = document.getElementById("btn_pause2");
     let btn_pause_reset2 = document.getElementById("btn_pause_reset2");
     let btn_play3 = document.getElementById("btn_play3");
@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', function(){
     let btn_pause_reset9 = document.getElementById("btn_pause_reset9");
     let btn_play10 = document.getElementById("btn_play10");
     let btn_pause10 = document.getElementById("btn_pause10");
-    let btn_pause_reset10 = document.getElementById("btn_pause_reset10");
+    let btn_pause_reset10 = document.getElementById("btn_pause_reset10"); */
     
     const RESET_FLAG_TRUE = 1;
     const RESET_FLAG_FALSE = 0;
@@ -50,8 +50,14 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //非同期で再生処理を行う関数
     async function wait_play(play_sound,wait_time) {
-        //htmlの秒数を取得
-        alert(wait_time.value + "秒後に再生します");
+
+
+        if(!isNaN(wait_time.value)) {
+            alert(wait_time.value + "秒後に再生します");
+        } else {
+            alert("数値を入力してください");
+            return;
+        }
         //msecのためかける1000が必要
         wait_time = wait_time.value * 1000;        
         //sleep関数を呼び出す。
@@ -86,8 +92,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play1.addEventListener("click", e => {
-        let loop_chk1 = document.getElementById("loop_chk1");
-        let wait_time1 = document.getElementById("wait_time1");
+        //let loop_chk1 = document.getElementById("loop_chk1");
+        //let wait_time1 = document.getElementById("wait_time1");
         //ループ処理関数を呼び出し
         loop_check (sound1, loop_chk1);
 
@@ -112,8 +118,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play2.addEventListener("click", e => {
-        let loop_chk2 = document.getElementById("loop_chk2");
-        let wait_time2 = document.getElementById("wait_time2");
+        //let loop_chk2 = document.getElementById("loop_chk2");
+        //let wait_time2 = document.getElementById("wait_time2");
         //ループ処理関数を呼び出し
         loop_check (sound2, loop_chk2);
 
@@ -138,8 +144,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
      //再生ボタンが押された際の処理
      btn_play3.addEventListener("click", e => {
-        let loop_chk3 = document.getElementById("loop_chk3");
-        let wait_time3 = document.getElementById("wait_time3");
+        /* let loop_chk3 = document.getElementById("loop_chk3");
+        let wait_time3 = document.getElementById("wait_time3"); */
         //ループ処理関数を呼び出し
         loop_check (sound3, loop_chk3);
 
@@ -164,8 +170,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play4.addEventListener("click", e => {
-        let loop_chk4 = document.getElementById("loop_chk4");
-        let wait_time4 = document.getElementById("wait_time4");
+        /* let loop_chk4 = document.getElementById("loop_chk4");
+        let wait_time4 = document.getElementById("wait_time4"); */
         //ループ処理関数を呼び出し
         loop_check (sound4, loop_chk4);
 
@@ -190,9 +196,9 @@ window.addEventListener('DOMContentLoaded', function(){
 
         //再生ボタンが押された際の処理
         btn_play10.addEventListener("click", e => {
-            let loop_chk10 = document.getElementById("loop_chk10");
+/*             let loop_chk10 = document.getElementById("loop_chk10");
             let wait_time10 = document.getElementById("wait_time10");
-            //ループ処理関数を呼び出し
+ */            //ループ処理関数を呼び出し
             loop_check (sound10, loop_chk10);
     
             //ウエイト処理を実行
@@ -200,7 +206,7 @@ window.addEventListener('DOMContentLoaded', function(){
         });
     
         //一時停止ボタンが押された際の処理
-        btn_pause4.addEventListener("click", e => {
+        btn_pause10.addEventListener("click", e => {
             stop_sound (sound10, RESET_FLAG_FALSE);
         });
     
@@ -216,8 +222,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play5.addEventListener("click", e => {
-        let loop_chk5 = document.getElementById("loop_chk5");
-        let wait_time5 = document.getElementById("wait_time5");
+/*         let loop_chk5 = document.getElementById("loop_chk5");
+        let wait_time5 = document.getElementById("wait_time5"); */
         //ループ処理関数を呼び出し
         loop_check (sound5, loop_chk5);
 
@@ -242,8 +248,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play6.addEventListener("click", e => {
-        let loop_chk6 = document.getElementById("loop_chk6");
-        let wait_time6 = document.getElementById("wait_time6");
+/*         let loop_chk6 = document.getElementById("loop_chk6");
+        let wait_time6 = document.getElementById("wait_time6"); */
         //ループ処理関数を呼び出し
         loop_check (sound6, loop_chk6);
 
@@ -268,8 +274,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play7.addEventListener("click", e => {
-        let loop_chk7 = document.getElementById("loop_chk7");
-        let wait_time7 = document.getElementById("wait_time7");
+/*         let loop_chk7 = document.getElementById("loop_chk7");
+        let wait_time7 = document.getElementById("wait_time7"); */
         //ループ処理関数を呼び出し
         loop_check (sound7, loop_chk7);
 
@@ -294,8 +300,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play8.addEventListener("click", e => {
-        let loop_chk8 = document.getElementById("loop_chk8");
-        let wait_time8 = document.getElementById("wait_time8");
+/*         let loop_chk8 = document.getElementById("loop_chk8");
+        let wait_time8 = document.getElementById("wait_time8"); */
         //ループ処理関数を呼び出し
         loop_check (sound8, loop_chk8);
 
@@ -320,8 +326,8 @@ window.addEventListener('DOMContentLoaded', function(){
 
     //再生ボタンが押された際の処理
     btn_play9.addEventListener("click", e => {
-        let loop_chk9 = document.getElementById("loop_chk9");
-        let wait_time9 = document.getElementById("wait_time9");
+/*         let loop_chk9 = document.getElementById("loop_chk9");
+        let wait_time9 = document.getElementById("wait_time9"); */
         //ループ処理関数を呼び出し
         loop_check (sound9, loop_chk9);
 
