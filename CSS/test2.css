@@ -20,64 +20,99 @@ body, h1, p {
     color: #ffffff;
     }
     
-    header, div#main, nav, footer {
+    header, footer {
     padding: 8px;
     }
     
-/*     header {
-    background-color: #339933;
-    } */
     
-    div#content {
+    .content {
     background-color: #99cc33;
-    width: 760px;
     overflow: hidden;
+    display :flex;
     }
     
+    .nav {
+      flex-shrink: 0;
+      flex: 1;
+      display: list-item;
+      list-style-type: none;
+      text-transform: uppercase;
+      padding: 0.5em;
+      color: #339933;
+      background-color: rgb(68, 67, 67);
+      float: left;
+    }
+
+    .nav a:link {
+      color: #ffffff;
+    }
+      
+    .nav a:visited {
+      color: #ccffcc;
+    }
+      
+    .nav a:hover {
+      color: #339933;
+    }
+      
+    .nav li {
+      line-height: 2.5em;
+    } */
+
+
+
+
+
     div#main {
+    flex-shrink: 0;
+    flex: 2;
     background-color: #ffffff;
-    width: 584px;
     float: right;
     }
     
-    nav {
-    color: #339933;
-    background-color: #99cc33;
-    width: 144px;
-    float: left;
-    }
+
     
-    nav a:link {
-    color: #ffffff;
-    }
-    
-    nav a:visited {
-    color: #ccffcc;
-    }
-    
-    nav a:hover {
-    color: #339933;
-    }
-    
-    nav li {
-    line-height: 2em;
-    }
+
     
     footer {
     color: #ffffff;
     background-color: #339933;
     }
 
+
+    .line1 {
+      display:flex;
+      flex-wrap: wrap;
+      width:auto;
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+
     .sound_play_box{
         margin:0 auto;
         color: #FFF;
-        text-align:  center;
+        text-align: center;
         background: #6eb7ff;
         border-bottom: solid 6px #3f87ce;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
         border-radius: 9px;
         width: 400px;    
+        overflow: visible;
+        margin: 0 auto;
     }
+    .sound_play_box img{
+      display: block;
+      transition-duration: 0.5s;
+    }
+    .sound_play_box img:hover {
+      transform: scale(1.2,1.2);
+      transition-duration: 0.5s;
+      }
+
+
+
     
     .headercss {
         padding: 0.5em 1em;
@@ -122,7 +157,7 @@ body, h1, p {
   }
   
   .d-demo__item {
-    width: calc(100vw / 6);
+    width: calc(100vw / 10);
   }
   .d-demo__item > img{
      width: 100%;
